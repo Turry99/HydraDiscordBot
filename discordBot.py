@@ -5,9 +5,6 @@ import asyncio
 import random
 
 client = discord.Client()
-#bot_prefix = "!"
-#client = commands.Bot(command_prefix=bot_prefix)
-
 
 @client.event
 async def on_ready():
@@ -21,6 +18,12 @@ async def on_message(message):
 		If they are both integers , then chose a number from that range
 		"""
 		elements = message.content.split(" ")
+		if elements[1] == "help":
+			await client.send_message(message.channel, "Choses a random number from a range (ex: !rand 0 10)")
+			await client.send_message(message.channel, "Choses a random name from a list (atleast 2) (ex: !rand Python Tzar)")
+
+		elif len(elements) < 2:
+			await client.send_message(message.channel, "You need atleast 2 elements.")
 		try:
 			#There are 2 integers
 			elements[1] = int(elements[1])
