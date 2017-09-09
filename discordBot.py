@@ -18,7 +18,7 @@ async def on_message(message):
 	if message.content.startswith("!rand"):
 		"""
 		It will chose a random element if !rand fElem sElem
-		If they are both integers , then chose a number from that ransge
+		If they are both integers , then chose a number from that range
 		"""
 		elements = message.content.split(" ")
 		try:
