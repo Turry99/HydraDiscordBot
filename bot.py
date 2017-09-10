@@ -8,11 +8,13 @@ import sys
 sys.path.append('/home/cabox/workspace/Commands')
 								
 from Commands import Rand
+from Commands import Tky
+
 
 client = discord.Client()
 
 """Commands you want Available"""
-my_commands = [Rand()]
+my_commands = [Rand(),Tky()]
 
 @client.event
 async def on_ready():
