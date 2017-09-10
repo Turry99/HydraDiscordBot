@@ -44,4 +44,4 @@ async def activate(entity, message, client):
 	
 	
 """run client on token"""
-client.run("MzU2MDIxMDQxNTQzMjQ5OTMw.DJXJgA.qky3OslM80Nsbe41OlS43lAdKVo")
+client.run("<token>")
