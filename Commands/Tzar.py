@@ -1,7 +1,13 @@
 import random
 import asyncio
+import time
+
 
 class Tzar:
+  
+    def __init__(self):
+       self.starttime = time.time()
+    
     
     async def checkCommand(self, message):
        return message.content.startswith("!tzar")
@@ -12,6 +18,10 @@ class Tzar:
       
       
     async def activateCommand(self, message, client):
+        timeout = time.time() - self.starttime
+        if timeout < 600:
+          return await client.send_message(message.channel, "Timeout: this command has a 10 minute cooldown")
+        self.starttime = time.time()  
         allcoders = [] #List to be filled with members of coding
         tStatus = None #Empty string to be set later (Tzar's Status)
         for server in client.servers: 
@@ -53,4 +63,8 @@ class Tzar:
         elif tStatus == "idle":
                 #Tzar is idle
                 sendable = "Tzar is currently watching pornhub, we'll leave him be. " + "you can ask his favorite coder <@" + allcoders[random.randint(0, len(allcoders)-1)] + ">"
+                await client.send_message(message.channel, sendable)
+        else:
+                #Tzar is invisible or some other state that we don't know :/
+                sendable = "I don't know what Tzar is doing...sorry master. You can still ask a coder though <@" + allcoders[random.randint(0, len(allcoders)-1)] + ">"
                 await client.send_message(message.channel, sendable)
