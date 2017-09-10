@@ -10,14 +10,15 @@ sys.path.append('/home/abox/Desktop/HydraDiscordBot/Commands')
 from Commands import Rand
 from Commands import Tky
 from Commands import Edm
-
+from Commands import Tzar
 client = discord.Client()
 
 """Commands you want Available"""
-my_commands = [Rand(),Tky(),Edm()]
+my_commands = [Rand(),Tky(),Edm(),Tzar()]
 
 @client.event
 async def on_ready():
+	await client.change_presence(game=discord.Game(name="with Hydrus.group"))
 	print("Hydrus for the win")
 
 	
