@@ -24,9 +24,6 @@ class Rand:
         if elements[1] == "help":
           await client.send_message(message.channel, "Choses a random number from a range (ex: !rand 0 10)")
           return await client.send_message(message.channel, "Choses a random name from a list (atleast 2) (ex: !rand Python Tzar)")
-
-        elif len(elements) < 2:
-          return await client.send_message(message.channel, "You need atleast 2 elements.")
         else:
           try:
             #There are 2 integers
