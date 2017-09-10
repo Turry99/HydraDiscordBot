@@ -9,12 +9,12 @@ sys.path.append('/home/abox/Desktop/HydraDiscordBot/Commands')
 								
 from Commands import Rand
 from Commands import Tky
-
+from Commands import Edm
 
 client = discord.Client()
 
 """Commands you want Available"""
-my_commands = [Rand(),Tky()]
+my_commands = [Rand(),Tky(),Edm()]
 
 @client.event
 async def on_ready():
