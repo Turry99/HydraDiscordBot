@@ -5,7 +5,7 @@ import asyncio
 import sys
 
 """Set Sys path"""
-sys.path.append('/home/cabox/workspace/Commands')
+sys.path.append('/home/abox/Desktop/HydraDiscordBot/Commands')
 								
 from Commands import Rand
 from Commands import Tky
@@ -44,4 +44,4 @@ async def activate(entity, message, client):
 	
 	
 """run client on token"""
-client.run("<token>")
+client.run("MzU2MDIxMDQxNTQzMjQ5OTMw.DJXJgA.qky3OslM80Nsbe41OlS43lAdKVo")
