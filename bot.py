@@ -13,14 +13,16 @@ from Commands import Rand
 from Commands import Tky
 from Commands import Edm
 from Commands import Tzar
+from Commands import Doggo
 
 client = discord.Client()
 starttime = time.time()
 """Commands you want Available"""
-my_commands = [Rand(),Tky(),Edm(),Tzar()]
+my_commands = [Rand(),Tky(),Edm(),Tzar(), Doggo()]
 
 @client.event
 async def on_ready():
+	await client.change_presence(game=discord.Game(name="with Hydrus.group"))
 	print("Hydrus for the win")
 
 	
