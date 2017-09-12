@@ -18,7 +18,10 @@ class Imger:
       if elements[1][:5] == "https":
         #User is trying to send a link
         imageurl = elements[1]
-        filename = message.author.id + imageurl[-4:]
+        if imageurl[-4:] != ".jpg" and imageurl[-4:] != ".png":
+          filename = message.author.id + ".jpg"
+        else:
+          filename = message.author.id + imageurl[-4:]
         theimage = requests.get(imageurl).content
         with open(filename, 'wb') as outputimg:
           outputimg.write(theimage)
