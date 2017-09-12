@@ -14,11 +14,11 @@ from Commands import Tky
 from Commands import Edm
 from Commands import Tzar
 from Commands import Doggo
-
+from Commands import Imger
 client = discord.Client()
 starttime = time.time()
 """Commands you want Available"""
-my_commands = [Rand(),Tky(),Edm(),Tzar(), Doggo()]
+my_commands = [Rand(),Tky(),Edm(),Tzar(), Doggo(), Imger()]
 
 @client.event
 async def on_ready():

@@ -3,3 +3,4 @@ from Tky import Tky
 from Edm import Edm
 from Tzar import Tzar
 from Doggo import Doggo
+from Imger import Imger
